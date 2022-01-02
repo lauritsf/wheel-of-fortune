@@ -10,7 +10,7 @@ class Game {
     this.players = null;
     this.playerIndex = 0;
     this.puzzleKeys = Object.keys(data.puzzles);
-    this.lastPuzzle= {};
+    this.lastPuzzle = {};
     this.winner = null;
   }
 
@@ -24,14 +24,13 @@ class Game {
     this.round++;
     $('.round-num').text(this.round);
     let roundIndex = this.round - 1;
-    let bonusRoundPuzzles = this.puzzleKeys[roundIndex - 1];
     let puzzleKeyIndex = this.puzzleKeys[roundIndex];
-    if (this.round === 6) {
+    if (this.round === this.puzzleKeys.length + 1) {
       return;
-    } else if (this.round === 5) {
+    } else if (this.round === this.puzzleKeys.length) {
       this.bonusRound = true;
       $('.round-num').text('$');
-      return new BonusRound(data.puzzles[bonusRoundPuzzles].puzzle_bank,
+      return new BonusRound(data.puzzles[puzzleKeyIndex].puzzle_bank,
         data.bonusWheel);
     } else {
       return new Round(data.puzzles[puzzleKeyIndex].puzzle_bank, data.wheel);

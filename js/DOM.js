@@ -11,31 +11,34 @@ const domUpdates = {
   },
 
   getPlayerOne() {
+    var playerOne;
     if ($('.player1-name').val()) {
-      var playerOne = new Player($('.player1-name').val());
+      playerOne = new Player($('.player1-name').val());
       $('.player1-ba').text(`${$('.player1-name').val()}: $`);
     } else {
-      var playerOne = new Player('Player 1');
+      playerOne = new Player('Player 1');
     }
     return playerOne;
   },
   
   getPlayerTwo() {
+    var playerTwo;
     if ($('.player2-name').val()) {
-      var playerTwo = new Player($('.player2-name').val());
+      playerTwo = new Player($('.player2-name').val());
       $('.player2-ba').text(`${$('.player2-name').val()}: $`);
     } else {
-      var playerTwo = new Player('Player 2');
+      playerTwo = new Player('Player 2');
     }
     return playerTwo;
   },
   
   getPlayerThree() {
+    var playerThree;
     if ($('.player3-name').val()) {
-      var playerThree = new Player($('.player3-name').val());
+      playerThree = new Player($('.player3-name').val());
       $('.player3-ba').text(`${$('.player3-name').val()}: $`);
     } else {
-      var playerThree = new Player('Player 3');
+      playerThree = new Player('Player 3');
     }
     return playerThree;
   },
@@ -54,24 +57,10 @@ const domUpdates = {
   displayNames(playerArray, index) {
     $('.game-winner').text(playerArray[index].name);
     $('.winning-score').text(playerArray[index].wallet);
-    if (index === 2) {
-      $('.on-deck-name').text(playerArray[0].name);
-      $('.on-deck-score').text(playerArray[0].wallet);
-      $('.in-the-hole-name').text(playerArray[1].name);
-      $('.in-the-hole-score').text(playerArray[1].wallet);
-    } else if (index === 1) {
-      $('.on-deck-name').text(playerArray[2].name);
-      $('.on-deck-score').text(playerArray[2].wallet);
-      $('.in-the-hole-name').text(playerArray[0].name);
-      $('.in-the-hole-score').text(playerArray[0].wallet);
-    } else {
-      $('.on-deck-name').text(playerArray[1].name);
-      $('.on-deck-score').text(playerArray[1].wallet);
-      $('.in-the-hole-name').text(playerArray[2].name);
-      $('.in-the-hole-score').text(playerArray[2].wallet);
-    }
-    
-      
+    $('.on-deck-name').text(playerArray[(index + 1) % 3]);
+    $('.on-deck-name').text(playerArray[(index + 1) % 3].name);
+    $('.in-the-hole-name').text(playerArray[(index + 2) % 3].name);
+    $('.in-the-hole-score').text(playerArray[(index + 2) % 3].wallet);
   },
 
   displayWinner(winner, score) {

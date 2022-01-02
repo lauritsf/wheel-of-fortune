@@ -121,7 +121,7 @@ function solveHandler() {
     game.bonusRound ? solveBonusHandler(result) : null;
     game.endTurn();
   }
-};
+}
 
 function solveBonusHandler(result) {
   if (result) {

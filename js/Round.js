@@ -9,8 +9,10 @@ class Round {
   }
 
   generatePuzzle() {
-    let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
-    return new Puzzle(this.puzzleBank[randomIndex]);
+    // override, to the the first puzzle.
+    return new Puzzle(this.puzzleBank[0]);
+    //let randomIndex = Math.floor(Math.random() * this.puzzleBank.length);
+    //return new Puzzle(this.puzzleBank[randomIndex]);
   }
 
   generateWheelValue() {

@@ -3,7 +3,7 @@ import domUpdates from './DOM.js';
 class Puzzle {
   constructor(currentPuzzle) {
     this.currentPuzzle = currentPuzzle;
-    this.puzzleLength = this.currentPuzzle.total_number_of_letters;
+    this.puzzleLength = this.currentPuzzle.correct_answer.replace(/\s+/g, '').length
     this.correctCount = 0;
     this.numberCorrect = 0;
     this.completed = false;
