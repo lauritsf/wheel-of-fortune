@@ -145,10 +145,10 @@ function spinHandler() {
 }
 
 function badSpinHandler() {
-  if (wheel.currentValue === 'LOSE A TURN') {
+  if (wheel.currentValue === 'TABT TUR') {
     game.endTurn();
-    buzz.play();
-  } else if (wheel.currentValue === 'BANKRUPT') {
+    buzzer.play();
+  } else if (wheel.currentValue === 'FALLIT') {
     bankrupt.play();
     game.players[game.playerIndex].wallet = 0;
     game.endTurn();
@@ -164,7 +164,7 @@ function keyboardHandler(e) {
   $('.vowel-error').css('display', 'none');
   let currentTurn = game.players[game.playerIndex];
   let currentGuess = $(e.target).text();
-  if (['A', 'E', 'I', 'O', 'U'].includes(currentGuess)) {
+  if (['A', 'E', 'I', 'O', 'U', 'Y', 'Æ', 'Ø', 'Å'].includes(currentGuess)) {
     vowelGuessHandler(currentGuess, currentTurn, e);
   } else {
     consonantGuessHandler(currentGuess, currentTurn, e);

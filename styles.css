@@ -172,7 +172,7 @@ h2 {
   position: relative;
   display: grid;
   font-size: 1.5rem;
-  grid-template-columns: repeat(13, 1fr);
+  grid-template-columns: repeat(11, 1fr);
   height: 100px;
   margin: 20px auto;
   width: 65%;

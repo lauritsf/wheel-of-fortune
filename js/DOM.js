@@ -171,7 +171,7 @@ const domUpdates = {
   resetKeyboard() {
     let keyboardLetters = Array.from($('.keyboard-letters'));
     keyboardLetters.forEach(letter => {
-      if (!['A', 'E', 'I', 'O', 'U'].includes($(letter).text())) {
+      if (!['A', 'E', 'I', 'O', 'U', 'Y', 'Æ', 'Ø', 'Å'].includes($(letter).text())) {
         $(letter).removeClass('vowel');
       }
     });
@@ -278,9 +278,9 @@ const domUpdates = {
     $('.player1-ba-num').text('0');
     $('.player2-ba-num').text('0');
     $('.player3-ba-num').text('0');
-    $('.player1-ba').text('P1: $');
-    $('.player2-ba').text('P2: $');
-    $('.player3-ba').text('P3: $')
+    $('.player1-ba').text('P1: ');
+    $('.player2-ba').text('P2: ');
+    $('.player3-ba').text('P3: ')
   },
 
   displayBonusIntro(winner, score) {
@@ -294,8 +294,8 @@ const domUpdates = {
     $('.popup-cover').css('display', 'none');
     $('.bonus-round-intro').css('display', 'none');
     $('header').html(
-      `<h1 class="bonus-round-header">BONUS RoUND</h1>
-      <h2 class="bonus-instructions">Choose 1 vowel and 3 consonants</h2>`)
+      `<h1 class="bonus-round-header">BONUS RUNDE</h1>
+      <h2 class="bonus-instructions">Vælg 1 vokal og 3 konsonanter</h2>`)
     $('header').css('display', 'block');
     $('.bank-accts').css('bottom', '35px');
   },
@@ -309,18 +309,18 @@ const domUpdates = {
       `<header>
         <div class="on-deck">
           <h2 class="on-deck-name">player 2</h2>
-          <h2 class="on-deck-score">2,000</h2>
+          <h2 class="on-deck-score">0</h2>
         </div>
         <div class="at-bat">
           <h2 class="game-winner">player 1</h2>
-          <h2 class="winning-score">2,000</h2>
+          <h2 class="winning-score">0</h2>
           <button class="spin-button top-buttons">SPIN</button>
-          <button class="solve-button top-buttons">SOLVE</button>
-          <button class="vowel-button top-buttons">VOWEL</button>
+          <button class="solve-button top-buttons">LØS</button>
+          <button class="vowel-button top-buttons">VOKAL</button>
         </div>
         <div class="in-the-hole">
           <h2 class="in-the-hole-name">player 3</h2>
-          <h2 class="in-the-hole-score">2,000</h2>
+          <h2 class="in-the-hole-score">0</h2>
         </div>
       </header>`);
   },
