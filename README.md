@@ -1,3 +1,6 @@
+# Fork
+This fork was adapted to fit with the danish format of Wheel of Fortune, Lykkehjulet
+
 # Wheel of !Fortune
 
 This project is a web-based Wheel of Fortune game designed for three players where players try to guess letters in a randomly generated puzzle while spinning a wheel to determine the point value for each letter. There are four rounds and an additional bonus round for the player with the highest score after the first four rounds. The main objective of this project was to design a game implementing OOP patterns with classes and methods following SRP. Additionally we wanted to create an intuitive and engaging UI/UX.
